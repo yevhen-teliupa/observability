@@ -38,12 +38,10 @@
 login: admin
 password: admin
 # Що відображає dashboard
-- Nginx active connections
 - Nginx requests per second
 - CPU usage
 - RAM usage
 - Nginx logs stream
-- Перевірка логів
 
 # Щоб згенерувати логи:
 
