@@ -16,7 +16,7 @@ scrape_configs:
 
     relabel_configs:
       - source_labels: ['__meta_docker_container_name']
-        regex: '/nginx'
+        regex: '.*nginx.*'
         action: keep
 
       - target_label: job
@@ -27,10 +27,6 @@ scrape_configs:
 
       - source_labels: ['__meta_docker_container_log_stream']
         target_label: stream
-
-      - source_labels: ['__meta_docker_container_id']
-        target_label: __path__
-        replacement: /var/lib/docker/containers/$1/$1-json.log
 
     pipeline_stages:
       - docker: {}
